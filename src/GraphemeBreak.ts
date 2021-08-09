@@ -58,6 +58,36 @@ export const toCodePoints = (str: string): number[] => {
     return codePoints;
 };
 
+export const fromCodePoint = (...codePoints: number[]): string => {
+    if (String.fromCodePoint) {
+        return String.fromCodePoint(...codePoints);
+    }
+
+    const length = codePoints.length;
+    if (!length) {
+        return '';
+    }
+
+    const codeUnits = [];
+
+    let index = -1;
+    let result = '';
+    while (++index < length) {
+        let codePoint = codePoints[index];
+        if (codePoint <= 0xffff) {
+            codeUnits.push(codePoint);
+        } else {
+            codePoint -= 0x10000;
+            codeUnits.push((codePoint >> 10) + 0xd800, (codePoint % 0x400) + 0xdc00);
+        }
+        if (index + 1 === length || codeUnits.length > 0x4000) {
+            result += String.fromCharCode(...codeUnits);
+            codeUnits.length = 0;
+        }
+    }
+    return result;
+};
+
 export const UnicodeTrie = createTrieFromBase64(base64, byteLength);
 
 export const BREAK_NOT_ALLOWED = '×';
@@ -164,7 +194,7 @@ export const GraphemeBreaker = (str: string) => {
     const codePoints = toCodePoints(str);
     const length = codePoints.length;
     let index = 0;
-    // @ts-ignore
+    let lastEnd = 0;
     const classTypes = codePoints.map(codePointToClass);
 
     return {
@@ -173,9 +203,37 @@ export const GraphemeBreaker = (str: string) => {
                 return {done: true, value: null};
             }
 
+            let graphemeBreak = BREAK_NOT_ALLOWED;
+            while (
+                index < length &&
+                (graphemeBreak = _graphemeBreakAtIndex(codePoints, classTypes, ++index)) === BREAK_NOT_ALLOWED
+            ) {}
+
+            if (graphemeBreak !== BREAK_NOT_ALLOWED || index === length) {
+                const value = fromCodePoint.apply(null, codePoints.slice(lastEnd, index));
+                lastEnd = index;
+                return {value, done: false};
+            }
+
+            return {done: true, value: null};
             while (index < length) {}
 
             return {done: true, value: null};
         },
     };
+};
+
+export const splitGraphemes = (str: string): string[] => {
+    const breaker = GraphemeBreaker(str);
+
+    const graphemes = [];
+    let bk;
+
+    while (!(bk = breaker.next()).done) {
+        if (bk.value) {
+            graphemes.push(bk.value.slice());
+        }
+    }
+
+    return graphemes;
 };

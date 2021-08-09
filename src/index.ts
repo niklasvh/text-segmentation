@@ -1,1 +1,1 @@
-export {GraphemeBreaker} from './GraphemeBreak';
+export {GraphemeBreaker, splitGraphemes} from './GraphemeBreak';
