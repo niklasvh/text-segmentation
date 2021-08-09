@@ -13,7 +13,6 @@ You can install the module via npm:
     npm install text-segmentation
   
 ### Example
-[JSFiddle](https://jsfiddle.net/ofd3752k)
 ```javascript
 import {splitGraphemes} from 'text-segmentation';
 
