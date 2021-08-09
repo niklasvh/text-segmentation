@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.1](https://github.com/niklasvh/text-segmentation/compare/v1.0.0...v1.0.1) (2021-08-09)
+
+
+### docs
+
+* add readme ([c3f1dd3](https://github.com/niklasvh/text-segmentation/commit/c3f1dd31ef4880ad7b8ecab5155f7362d4d652d3))
+
+### feat
+
+* expose fromCodePoint / toCodePoints ([a497aeb](https://github.com/niklasvh/text-segmentation/commit/a497aeb75255fec597b8c4b0803e3b57d6a06a25))
+
+
+
 # 1.0.0 (2021-08-09)
 
 
