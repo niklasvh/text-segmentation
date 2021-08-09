@@ -10,6 +10,7 @@
     "build": "tsc --module commonjs && rollup -c rollup.config.ts",
     "format": "prettier --write \"{src,scripts}/**/*.ts\"",
     "generate-trie": "ts-node scripts/generate_grapheme_break_trie.ts",
+    "generate-tests": "ts-node scripts/generate_grapheme_break_tests.ts",
     "lint": "tslint -c tslint.json --project tsconfig.json -t codeFrame src/**/*.ts tests/**/*.ts scripts/**/*.ts",
     "mocha": "mocha --require ts-node/register tests/*.ts",
     "test": "npm run lint && npm run mocha",
