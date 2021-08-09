@@ -1,0 +1,10 @@
+src/
+tests/
+scripts/
+.github/
+.npmignore
+.prettierrc
+tslint.json
+tsconfig.json
+.travis.yml
+.rpt2_cache

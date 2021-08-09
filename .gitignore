@@ -1,0 +1,9 @@
+/dist
+node_modules/
+.envrc
+*.iml
+.idea/
+.DS_Store
+npm-debug.log
+*.log
+.rpt2_cache
