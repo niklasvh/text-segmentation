@@ -1,6 +1,6 @@
 {
   "name": "text-segmentation",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "",
   "main": "dist/text-segmentation.umd.js",
   "module": "dist/text-segmentation.es5.js",
