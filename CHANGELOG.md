@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.2](https://github.com/niklasvh/text-segmentation/compare/v1.0.1...v1.0.2) (2021-08-10)
+
+
+### deps
+
+* update base64-arraybuffer ([3804223](https://github.com/niklasvh/text-segmentation/commit/3804223855fa4f37e8c784dca5ce5113c33d3e27))
+
+
+
 ## [1.0.1](https://github.com/niklasvh/text-segmentation/compare/v1.0.0...v1.0.1) (2021-08-09)
 
 
