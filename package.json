@@ -17,7 +17,7 @@
     "release": "standard-version"
   },
   "dependencies": {
-    "utrie": "^1.0.0"
+    "utrie": "^1.0.1"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^19.0.0",
