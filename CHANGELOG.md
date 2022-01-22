@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.3](https://github.com/niklasvh/text-segmentation/compare/v1.0.2...v1.0.3) (2022-01-22)
+
+
+### fix
+
+* source maps ([4108278](https://github.com/niklasvh/text-segmentation/commit/4108278c278b271543e9a997dbf14ce14e946fe7))
+
+
+
 ## [1.0.2](https://github.com/niklasvh/text-segmentation/compare/v1.0.1...v1.0.2) (2021-08-10)
 
 
