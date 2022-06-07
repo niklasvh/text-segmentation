@@ -216,9 +216,6 @@ export const GraphemeBreaker = (str: string) => {
             }
 
             return {done: true, value: null};
-            while (index < length) {}
-
-            return {done: true, value: null};
         },
     };
 };
